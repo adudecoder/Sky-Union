@@ -1,0 +1,238 @@
+:root {
+    --font: font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+body {
+    font-size: 100%;
+    /* background-image: url("/img/wallpaperflare.com_wallpaper\(1\).jpg");
+    background-size: cover;
+    background-repeat: no-repeat; */
+    background-image: linear-gradient(135deg, #979d7d 0, #828475 25%, #6b6b6c 50%, #525464 75%, #373f5c 100%);
+    /* background-image: linear-gradient(180deg, #857cbe 0, #5a5885 50%, #35364f 100%); */
+    /* background-image: linear-gradient(180deg, #f45c00 0, #ec4800 16.67%, #e13100 33.33%, #d30e0e 50%, #c40017 66.67%, #b5001c 83.33%, #a80021 100%); */
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+.logo {
+    font-size: 24px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: var(--font);
+    background: #23232e;
+    height: 8vh;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav-list li {
+    letter-spacing: 3px;
+    margin-left: 32px;
+}
+
+.nav-list li:hover {
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.mobile-menu {
+    display: none;
+    cursor: pointer;
+}
+
+.mobile-menu div {
+    width: 32px;
+    height: 2px;
+    background: #fff;
+    margin: 8px;
+    transition: 0.3s;
+}
+
+/* Conteudo principal */
+.conteudo {
+    border-top: 0.4px solid #fff2e7;
+    margin-bottom: 48px;
+}
+
+.conteudo-principal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.conteudo-principal-escrito {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.conteudo-principal-escrito-titulo {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 64px;
+    color: #fff2e7;
+}
+
+.conteudo-principal-escrito-subtitulo {
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 24px;
+    color: #000;
+}
+
+.conteudo-principal-escrito-botao {
+    background-color: #ecd6c4;
+    width: 180px;
+    height: 60px;
+    border: none;
+    box-shadow: 4px 5px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 24px;
+    color: #2f2325;
+}
+
+.conteudo-principal-escrito-botao:hover {
+    cursor: pointer;
+    background-color: #2f2325;
+    color: #fff;
+}
+
+.conteudo-principal-imagem {
+    width: 400px;
+    height: 300px;
+    padding-top: 10px;
+    border-radius: 50%;
+}
+
+.conteudo-secundario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.conteudo-secundario-titulo {
+    border-top: 0.4px  solid #fff2e7;
+    padding-top: 48px;
+    font-family: var(--font);
+    font-weight: 400;
+    font-size: 24px;
+    color: #fff2ef;
+    margin-bottom: 16px;
+}
+
+.conteudo-secundario-paragrafo {
+    font-family: var(--font);
+    /* font-weight: 300; */
+    font-size: 18px;
+    color: #fff;
+}
+/* fim do Conteudo principal */
+
+/* Roda pé */
+.rodape {
+    padding: 32px;
+    border-top: 0.4px  solid #fff2e7;
+}
+
+.rodape-imagem {
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
+.rodape p {
+    color: #fff;
+}
+/* Fim do roda pé */
+
+@media (max-width: 999px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .nav-list {
+        position: absolute;
+        top: 8vh;
+        right: 0;
+        width: 50vw;
+        height: 92vh;
+        background: #23232e;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in;
+    }
+
+    .nav-list li {
+        margin-left: 0;
+        opacity: 0;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+}
+
+@media (max-width: 350px) {
+    h1, h2, button {
+        display: none;
+    }
+}
+
+.nav-list.active {
+    transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.mobile-menu.active .line1 {
+    transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+    opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+}
